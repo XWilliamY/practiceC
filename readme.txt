@@ -1,1 +1,1 @@
-Hello friends
+Code solutions to Project Euler problems 
