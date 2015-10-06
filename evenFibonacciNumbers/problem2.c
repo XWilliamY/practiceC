@@ -4,20 +4,25 @@ int main (void){
 
   int num = 10;
   int sum = 0;
-  fibonacci(num);
+  for(int i = 0; i <= num; i++){
+    if(fibonacci(1, 2, num) % 2 == 0){
+      sum += fibonacci(1, 2, num);
+    }
+  }
 
   printf("Answer: %d\n", sum);
 }
 
-int fibonacci(num){
-  if(num <= 1){
-    return 1;
+int fibonacci(int first, int second, int terms){
+  if(terms <= 1){
+    return first;
+  }
+  
+  if(terms == 2){
+    return second;
   }
 
-  return helper(num);
+  return fibonacci(second, first+second, terms-1);
 }
-
-int helper(int prev2, int prev1, int term){
-  return helper(prev2+prev1, prev1, term);
-}
+  
 
